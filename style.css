@@ -7,3 +7,7 @@
 img {
     width: 100%;
 }
+
+.platform {
+    border: 2px solid black;
+}
