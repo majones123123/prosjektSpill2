@@ -7,6 +7,13 @@
 img {
     width: 100%;
 }
+body {
+    background-image: url("bilder/editedbackground.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+
 
 .platform {
     border: 2px solid black;
