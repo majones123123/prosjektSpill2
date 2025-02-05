@@ -1,15 +1,21 @@
+
+const canvas = document.getElementById("myCanvas");
+
 let platformElm = document.querySelector(".platform");
 
 // function platformSize(HEIGHT, WIDTH) {};
 
-const HEIGHT = 1000;
-const WIDTH = 1000;
-const canvas = document.querySelector("canvas");
-canvas.height = HEIGHT;
-canvas.width = WIDTH;
+// Høyde og bredde på skjermen
+const HEIGHT = 500;
+const WIDTH = 500;
+const canvasElm = document.querySelector("canvas");
+canvasElm.height = HEIGHT;
+canvasElm.width = WIDTH;
 
-const ctx = canvas.getContext("2d");
+const ctx = canvasElm.getContext("2d");
 
+
+//Platform plassering
 function renderplat() {
   ctx.fillStyle = "#45597E";
   ctx.fillRect(
@@ -26,6 +32,17 @@ function renderplat() {
   );
 }
 
+//Spilleren
+let player = {
+    x: 200,
+    y: 200,
+    x_v: 0,
+    y_v: 0,
+    jump : true,
+    height: 20,
+    width: 20
+    };
+    //Renderer spilleren
 function renderplayer() {
   ctx.fillStyle = "#F08080";
   ctx.fillRect(player.x - 20, player.y - 20, player.width, player.height);
