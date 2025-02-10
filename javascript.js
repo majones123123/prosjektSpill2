@@ -1,4 +1,3 @@
-
 const canvas = document.getElementById("myCanvas");
 
 let platformElm = document.querySelector(".platform");
@@ -11,7 +10,6 @@ const WIDTH = 500;
 const canvasElm = document.querySelector("canvas");
 canvasElm.height = HEIGHT;
 canvasElm.width = WIDTH;
-
 const ctx = canvasElm.getContext("2d");
 
 
@@ -34,16 +32,39 @@ function renderplat() {
 
 //Spilleren
 let player = {
-    x: 200,
-    y: 200,
-    x_v: 0,
-    y_v: 0,
-    jump : true,
-    height: 20,
-    width: 20
-    };
-    //Renderer spilleren
+  x: 200,
+  y: 200,
+  x_v: 0,
+  y_v: 0,
+  jump: true,
+  height: 20,
+  width: 20,
+};
+let keys = {
+  right: false,
+  left: false,
+  up: false,
+};
+//Renderer spilleren
 function renderplayer() {
   ctx.fillStyle = "#F08080";
   ctx.fillRect(player.x - 20, player.y - 20, player.width, player.height);
 }
+var num = 2;
+var platforms = [];
+function createplat() {
+  for (i = 0; i < num; i++) {
+    platforms.push({
+      x: 100 * i,
+      y: 200 + 30 * i,
+      width: 110,
+      height: 15,
+    });
+  }
+}
+function loop() {
+  renderplayer();
+  renderplat();
+}
+createplat();
+loop();
