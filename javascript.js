@@ -63,17 +63,38 @@ function rendercanvas() {
   ctx.fillRect(0, 0, 500, 500);
 }
 
-var num = 2;
+
 let platforms = [];
-function createplat() {
-  for (i = 0; i < num; i++) {
-    platforms.push({
-      x: 100 * i,
-      y: 200 + 30 * i,
-      width: 110,
-      height: 15,
-    });
+function createplat(numPlatforms) {
+  platforms = []; 
+
+  for (let i = 0; i < numPlatforms; i++) {
+      platforms.push({
+          x: Math.random() * 380, 
+          y: 200 + i * 40, 
+          width: 110,
+          height: 15 
+      });
   }
+
+  platforms.push({
+      x: 0,
+      y: 480,
+      width: 500,
+      height: 20
+  });
+  platforms.push({
+      x: 0,
+      y: 100,
+      width: 200,
+      height: 20
+  });
+  platforms.push({
+      x: 300,
+      y: 100,
+      width: 200,
+      height: 20
+  });
 }
 function loop() {
   renderplayer();
