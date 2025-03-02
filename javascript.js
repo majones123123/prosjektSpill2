@@ -101,3 +101,12 @@ function createplat(numPlatforms) {
       height: 20
   });
 }
+
+//Rendrer plattformene
+
+function renderplat() {
+  ctx.fillStyle = "yellow";
+  for (let i = 0; i < platforms.length; i++) {
+      ctx.fillRect(platforms[i].x, platforms[i].y, platforms[i].width, platforms[i].height);
+  }
+}
