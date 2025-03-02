@@ -110,3 +110,20 @@ function renderplat() {
       ctx.fillRect(platforms[i].x, platforms[i].y, platforms[i].width, platforms[i].height);
   }
 }
+
+//Nøkkeltaster for spilleren
+function keydown(e) {
+  if (e.keyCode == 37) { keys.left = true; }
+  if (e.keyCode == 38) { 
+      if (!player.jump) {
+          player.y_v = -10;
+      }
+  }
+  if (e.keyCode == 39) { keys.right = true; }
+}
+
+function keyup(e) {
+  if (e.keyCode == 37) { keys.left = false; }
+  if (e.keyCode == 38 && player.y_v < -2) { player.y_v = -3; }
+  if (e.keyCode == 39) { keys.right = false; }
+}
