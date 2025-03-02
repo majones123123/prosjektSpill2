@@ -63,13 +63,18 @@ function rendercanvas() {
   ctx.fillRect(0, 0, 500, 500);
 }
 
-
+//Let platforms[] lar meg legge til tall i senere som tilater meg å lage flere plattformer, og gir meg muligheten til å plasere de randomly etter loops senere.
 let platforms = [];
+
+//En ganske simpel men lang funksjon som oppretter de fundimentale plattformene i spillet.
+
+
 function createplat(numPlatforms) {
   platforms = []; 
 
   for (let i = 0; i < numPlatforms; i++) {
       platforms.push({
+        //Randomiserer x posisjonen til plattformene
           x: Math.random() * 380, 
           y: 200 + i * 40, 
           width: 110,
@@ -96,9 +101,3 @@ function createplat(numPlatforms) {
       height: 20
   });
 }
-function loop() {
-  renderplayer();
-  renderplat();
-}
-createplat();
-loop();
