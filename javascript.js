@@ -19,7 +19,7 @@ function renderplat() {
   ctx.fillRect(
     platforms[0].x,
     platforms[0].y,
-    platforms[0].width,
+     platforms[0].width,
     platforms[0].height
   );
   ctx.fillRect(
@@ -45,13 +45,26 @@ let keys = {
   left: false,
   up: false,
 };
+
+//Lager variabler for gravitasjon og friksjon
+let gravity = 0.35;
+let friction = 0.7;
+
+
 //Renderer spilleren
 function renderplayer() {
   ctx.fillStyle = "#F08080";
   ctx.fillRect(player.x - 20, player.y - 20, player.width, player.height);
 }
+
+//Funksjon for å opprette kanvasen
+function rendercanvas() {
+  ctx.fillStyle = "green";
+  ctx.fillRect(0, 0, 500, 500);
+}
+
 var num = 2;
-var platforms = [];
+let platforms = [];
 function createplat() {
   for (i = 0; i < num; i++) {
     platforms.push({
